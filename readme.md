@@ -1,0 +1,1 @@
+An AngularJS seed project.

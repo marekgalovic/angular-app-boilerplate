@@ -1,0 +1,35 @@
+html(ng-app="app")
+	head
+		base(href="/boilerplates/app/")
+		meta(charset="utf-8")
+		title stranka
+		- var styles = ['bower_components/bootstrap/dist/css/bootstrap.min']
+		- var scripts = ['bower_components/angular/angular.min', 'bower_components/angular-cookies/angular-cookies.min', 'bower_components/angular-ui-router/release/angular-ui-router.min']
+		- var configs = ['app', 'routes', 'run', 'config']
+		- var controllers = ['AuthController', 'HomeController']
+		- var factories = []
+		- var directives = []
+		- var services = ['AuthService']
+		//stylesheet
+		each style in styles
+			link(rel="stylesheet", href=style + ".css")
+		//scripts
+		each script in scripts
+			script(type="text/javascript" src=script + ".js")
+		//app modules
+		//configs
+		each config in configs
+			script(type="text/javascript" src="build/scripts/config/" + config + ".js")
+		//controllers
+		each controller in controllers
+			script(type="text/javascript" src="build/scripts/controllers/" + controller + ".js")
+		//factories
+		each factory in factories
+			script(type="text/javascript" src="build/scripts/factories/" + factory + ".js")
+		//directives
+		each directive in directives
+			script(type="text/javascript" src="build/scripts/directives/" + directive + ".js")
+		//services
+		each service in services
+			script(type="text/javascript" src="build/scripts/services/" + service + ".js")
+	body(ui-view='') Ahoj
